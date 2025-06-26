@@ -11,6 +11,20 @@ terraform {
 provider "azurerm" {
   features {}
 }
+variable "ARM_SUBSCRIPTION_ID" {
+
+  type = string
+}
+variable "ARM_CLIENT_ID" {
+    type = string
+  
+}
+variable "ARM_CLIENT_SECRET" {
+  type = string
+}
+variable "ARM_TENANT_ID" {
+  type = string
+}
 
 resource "azurerm_resource_group" "example" {
   name     = "terraformRG"

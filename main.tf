@@ -16,8 +16,7 @@ variable "ARM_SUBSCRIPTION_ID" {
   type = string
 }
 variable "ARM_CLIENT_ID" {
-    type = string
-  
+    type = string 
 }
 variable "ARM_CLIENT_SECRET" {
   type = string

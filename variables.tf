@@ -23,6 +23,5 @@ variable "account_tier" {
 variable "account_replication_type" {
     description = "value of account_replication_type"
     type = string
-    default = "LRS" 
   
 }

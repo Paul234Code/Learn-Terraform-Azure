@@ -11,26 +11,7 @@ terraform {
 provider "azurerm" {
   features {}
 }
-variable "ARM_SUBSCRIPTION_ID" {
-description = "value of ARM_SUBSCRIPTION_ID"
-  type = string
-  sensitive = true
-}
-variable "ARM_CLIENT_ID" {
-  description = "value of ARM_CLIENT_ID"
-    type = string 
-    sensitive = true
-}
-variable "ARM_CLIENT_SECRET" {
-  description = "value of ARM_CLIENT_SECRET"
-  type = string
-  sensitive = true
-}
-variable "ARM_TENANT_ID" {
-  description = "value of ARM_TENANT_ID"
-  type = string
-  sensitive = true
-}
+
 
 resource "azurerm_resource_group" "example" {
   name     = var.resource_group_name  
@@ -47,4 +28,11 @@ resource "azurerm_storage_account" "example" {
   tags = {
     environment = "Developpment"
   }
+}
+# Create a virtual network
+resource "azurerm_virtual_network" "vnet" {
+  name                = "myTFVnet"
+  address_space       = ["10.0.0.0/16"]
+  location            = "westus2"
+  resource_group_name = azurerm_resource_group.rg.name
 }

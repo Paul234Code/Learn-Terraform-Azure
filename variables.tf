@@ -31,6 +31,12 @@ variable "azurerm_virtual_network_name" {
     default = "vnet-eastus"
   
 }
+variable "address_space" {
+    description = "value of address_space"
+    type = list(string)
+    default = ["10.0.0.0/16"]
+  
+}
 variable "ARM_SUBSCRIPTION_ID" {
 description = "value of ARM_SUBSCRIPTION_ID"
   type = string

@@ -31,8 +31,9 @@ resource "azurerm_storage_account" "example" {
 }
 # Create a virtual network
 resource "azurerm_virtual_network" "vnet" {
-  name                = "myTFVnet"
-  address_space       = ["10.0.0.0/16"]
-  location            = "westus2"
-  resource_group_name = azurerm_resource_group.rg.name
+  name                = var.azurerm_virtual_network_name
+  location            = azurerm_resource_group.example.location
+  address_space       = var.address_space
+  resource_group_name = azurerm_resource_group.example.name
+
 }
